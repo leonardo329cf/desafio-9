@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.context.annotation.Lazy;
+
 
 @Entity
 @Table(name = "tb_genre")
@@ -21,6 +23,7 @@ public class Genre {
 	private Long id;
 	private String name;
 	
+	@Lazy
 	@OneToMany(mappedBy = "genre")
 	private List<Movie> movies = new ArrayList<>();
 	
