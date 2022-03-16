@@ -1,5 +1,8 @@
 package com.devsuperior.movieflix.services;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -42,4 +45,13 @@ public class ReviewService {
 		
 		return new ReviewDTO(entity);		
 	}
+
+	@Transactional(readOnly = true)
+	public List<ReviewDTO> findByMovieId(Long id) {
+		Movie movie = movieRepository.getOne(id);
+		if(movie == null) { 
+			throw new ResourceNotFoundException("No movie with id: " + id);
+		}
+		return repository.findByMovieId(id).stream().map(entity -> new ReviewDTO(entity)).collect(Collectors.toList());
+	}	
 }
