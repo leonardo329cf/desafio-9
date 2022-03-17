@@ -4,13 +4,14 @@ import { isAuthenticated, Role } from '../../util/auth';
 type Props = {
   children: React.ReactNode;
   path: string;
+  exact?: boolean;
   roles?: Role[];
 };
 
 const PrivateRoute = ({ children, path, roles = [] }: Props) => {
   return (
     <Route
-      path={path} exact
+      path={path}
       render={({ location }) =>
         !isAuthenticated() ? (
           <Redirect

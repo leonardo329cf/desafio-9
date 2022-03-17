@@ -2,7 +2,6 @@ import { useContext, useEffect } from 'react';
 import { getTokenData, isAuthenticated } from '../../util/auth';
 import { AuthContext } from '../../AuthContext';
 import { removeAuthData } from '../../util/storage';
-import history from '../../util/history';
 
 import './styles.css';
 import { Link } from 'react-router-dom';
