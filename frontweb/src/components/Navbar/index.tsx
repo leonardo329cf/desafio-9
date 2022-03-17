@@ -24,12 +24,10 @@ const Navbar = () => {
   }, [setAuthContextData]);
 
   const handleLogoutClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault();
     removeAuthData();
     setAuthContextData({
       authenticated: false,
     });
-    history.replace('/');
   };
 
   return (
@@ -41,7 +39,7 @@ const Navbar = () => {
         <div className="nav-logout">
           {authContextData.authenticated ? (
             <>
-              <a href="#logout" onClick={handleLogoutClick}>
+              <a href="/" onClick={handleLogoutClick}>
                 SAIR
               </a>
             </>
