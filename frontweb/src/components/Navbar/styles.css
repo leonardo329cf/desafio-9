@@ -1,0 +1,39 @@
+.main-nav {
+  height: 68px;
+}
+
+.container-fluid {
+  padding-left: 20px;
+  padding-right: 10px;
+}
+
+.h4 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.nav-logout {
+  height: 30px;
+  width: 100px;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-logout a {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@media (min-width: 1200px) {
+  .container-fluid {
+    padding-left: 40px;
+    padding-right: 30px;
+  }
+}

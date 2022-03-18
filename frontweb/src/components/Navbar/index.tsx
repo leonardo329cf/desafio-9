@@ -30,23 +30,23 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar bg-primary main-nav">
+    <nav className="navbar bg-tertiary text-fontSecondary main-nav">
       <div className="container-fluid">
         <Link to="/" className="nav-logo-text">
           <h4>MovieFlix</h4>
         </Link>
-        <div className="nav-logout">
+        
           {authContextData.authenticated ? (
-            <>
+            <div className="nav-logout">
               <a href="/" onClick={handleLogoutClick}>
                 SAIR
               </a>
-            </>
+              </div>
           ) : (
               <></>
           )}
         </div>
-      </div>
+      
     </nav>
   );
 };
