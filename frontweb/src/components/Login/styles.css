@@ -1,0 +1,83 @@
+.login-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 464px;
+  min-width: 298px;
+  left: 10px;
+  top: 85px;
+  border-radius: 4px;
+  padding: 60px 15px 100px 15px;
+  box-shadow: 0px 4px 20px 0px #00000040;
+  max-height: 573px;
+  max-width: 479px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.title-container {
+  padding-bottom: 30px;
+}
+
+.title-container h1 {
+  display: flex;
+  align-self: stretch;
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.form-container {
+  display: flex;
+  width: 100%;
+  min-width: 265px;
+  max-width: 385px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 55px;
+}
+
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.login-input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.login-input input {
+  width: 100%;
+  min-height: 46px;
+  background-color: #fefefe;
+}
+
+.login-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-submit button {
+  width: 100%;
+  height: 65px;
+  border-radius: 4px;
+}
+
+@media (min-width: 576px) {
+    .login-card {
+        padding: 75px 15px 130px 15px;
+    }
+  }
