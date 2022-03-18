@@ -5,10 +5,12 @@ import ReviewEntry from './ReviewEntry';
 import { Review } from '../../types/review';
 
 type Props = {
-    movieId: string;
-}
+  movieId: string;
+  refresh?: number;
+};
 
-const Reviews = ( { movieId } : Props ) => {
+const Reviews = ({ movieId, refresh }: Props) => {
+
   const [reviews, setReviews] = useState<Review[]>();
 
   const [isLoading, setIsLoading] = useState(false);
@@ -34,19 +36,19 @@ const Reviews = ( { movieId } : Props ) => {
       .finally(() => {
         setIsLoading(false);
       });
-  }, [movieId]);
+  }, [movieId, refresh]);
 
   return (
     <div className="reviews-container">
-    {!isLoading && !hasError && (
-      reviews?.map((review) => (
-        <div className="review-entry" key={review.id}>
-          <ReviewEntry review={review} />
-        </div>
-      ))
-    )}
-  </div>
-  )
+      {!isLoading &&
+        !hasError &&
+        reviews?.map((review) => (
+          <div className="review-entry" key={review.id}>
+            <ReviewEntry review={review} />
+          </div>
+        ))}
+    </div>
+  );
 };
 
 export default Reviews;

@@ -40,3 +40,7 @@ export const hasAnyRoles = (roles: Role[]): boolean => {
 
   return false;
 };
+
+export const isMember = (): boolean => {
+  return hasAnyRoles(['ROLE_MEMBER']);
+};
