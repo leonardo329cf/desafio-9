@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
+import './styles.css'
 
 const Movies = () => {
   return (
     <>
       <div className="movies-container">
-        <div>
+        <div className="title-container">
           <h2>Tela listagem de filmes</h2>
         </div>
         <div className="movies-list-container">
