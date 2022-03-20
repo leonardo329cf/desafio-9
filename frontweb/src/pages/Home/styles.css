@@ -6,8 +6,49 @@
   padding: 15px 10px;
 }
 
+.home-image-card {
+  display: none;
+}
+
 @media (min-width: 576px) {
   .home-container {
     padding: 40px 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .home-container {
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 170px;
+  }
+
+  .home-image-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    padding: 0px;
+  }
+
+  .image-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px 30px;
+    gap: 20px;
+    max-width: 380px;
+  }
+
+  .home-image-card h1 {
+    font-size: 48px;
+    font-weight: 700;
+  }
+
+  .home-image-card h4 {
+    font-size: 22px;
+    font-weight: 400;
   }
 }
