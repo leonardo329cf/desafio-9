@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { requestBackend } from '../../util/requests';
 import { useForm } from 'react-hook-form';
 
+import './styles.css';
+
 type Props = {
   movieId: string;
   refresh: Function;
@@ -16,6 +18,7 @@ const ReviewInsertCard = ({ movieId, refresh }: Props) => {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm<FormData>();
 
@@ -33,7 +36,8 @@ const ReviewInsertCard = ({ movieId, refresh }: Props) => {
     };
     requestBackend(params)
       .then((response) => {
-        setHasError(false);
+        setHasError(false);   
+        setValue('text','');     
         if (refresh !== undefined) {
           refresh();
         }
@@ -45,24 +49,22 @@ const ReviewInsertCard = ({ movieId, refresh }: Props) => {
   };
 
   return (
-    <div className="review-insert-card-container">
+    <div className="review-insert-card-container bg-secondary">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="form-container">
-          <input
-            {...register('text', {
-              required: 'Campo obrigatório',
-            })}
-            type="text"
-            className={`form-control base-input ${
-              errors.text ? 'is-invalid' : ''
-            }`}
-            placeholder="Deixe sua avaliação aqui"
-            name="text"
-          />
-          <button className="btn btn-primary">
-            <h6>SALVAR AVALIAÇÂO</h6>
-          </button>
-        </div>
+        <input
+          {...register('text', {
+            required: 'Campo obrigatório',
+          })}
+          type="text"
+          className={`form-control base-input ${
+            errors.text ? 'is-invalid' : ''
+          }`}
+          placeholder="Deixe sua avaliação aqui"
+          name="text"
+        />
+        <button className="btn btn-tertiary">
+          <h6>SALVAR AVALIAÇÃO</h6>
+        </button>
       </form>
       {hasError && (
         <div className="alert alert-danger">Erro ao submeter avaliação</div>

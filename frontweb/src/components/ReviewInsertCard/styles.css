@@ -1,0 +1,47 @@
+.review-insert-card-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+    box-shadow: 0px 4px 20px 0px #00000040;
+    border-radius: 4px;
+    min-width: 300px;
+}
+
+.review-insert-card-container form input[type=text] {
+    background-color: white;
+    margin-bottom: 20px;
+    color: black;
+    width: 100%;
+    font-size: 16px;
+    height: 45px;
+}
+
+.review-insert-card-container input::placeholder {
+    background-color: white;
+    margin-bottom: 20px;
+    color: #9E9E9E;
+}
+
+.review-insert-card-container button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px auto;
+    width: 100%;
+    height: 50px;
+    max-width: 334px;
+}
+
+.review-insert-card-container button h6 {
+    font-size: 16px;
+}
+
+@media(min-width: 1200px) {
+    .review-insert-card-container {
+        padding: 20px 25px;
+    }
+
+    .review-insert-card-container button h6 {
+        font-size: 20px;
+    }
+}

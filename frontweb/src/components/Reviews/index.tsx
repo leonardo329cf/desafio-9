@@ -4,6 +4,8 @@ import { requestBackend } from '../../util/requests';
 import ReviewEntry from './ReviewEntry';
 import { Review } from '../../types/review';
 
+import './styles.css';
+
 type Props = {
   movieId: string;
   refresh?: number;
@@ -39,7 +41,7 @@ const Reviews = ({ movieId, refresh }: Props) => {
   }, [movieId, refresh]);
 
   return (
-    <div className="reviews-container">
+    <div className="reviews-container bg-secondary">
       {!isLoading &&
         !hasError &&
         reviews?.map((review) => (

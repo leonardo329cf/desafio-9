@@ -4,6 +4,8 @@ import ReviewInsertCard from '../../components/ReviewInsertCard';
 import { useState } from 'react';
 import { isMember } from '../../util/auth';
 
+import './styles.css';
+
 type UrlParams = {
   movieId: string;
 };
@@ -18,7 +20,7 @@ const MovieDetails = () => {
   }
 
   return (
-    <div>
+    <div className="movie-detail-container">
       <div className="page-name-container">
         <h2>Tela detalhes do filme id: {movieId}</h2>
       </div>

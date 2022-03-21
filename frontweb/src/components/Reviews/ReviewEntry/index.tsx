@@ -1,6 +1,8 @@
 import StarIcon from '../../../assets/images/starIcon.png';
 import { Review } from '../../../types/review';
 
+import './styles.css';
+
 type Props = {
   review: Review;
 }
